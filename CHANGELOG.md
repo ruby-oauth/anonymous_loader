@@ -28,10 +28,19 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [0.1.1] - 2026-06-18
+
+- TAG: [v0.1.1][0.1.1t]
+- COVERAGE: 96.33% -- 105/109 lines in 2 files
+- BRANCH COVERAGE: 81.58% -- 31/38 branches in 2 files
+- 88.89% documented
+
+### Fixed
+
 - Fixed `$LOAD_PATH` version validation when the requested Ruby file and the
   adjacent version file live at different directory depths.
-
-### Security
 
 ## [0.1.0] - 2026-06-18
 
@@ -46,6 +55,8 @@ Please file a bug if you notice a violation of semantic versioning.
 - Added the initial anonymous namespace loader API with explicit path,
   RubyGems metadata, and `$LOAD_PATH` resolution strategies.
 
-[Unreleased]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.0...v0.1.1
+[0.1.1t]: https://github.com/ruby-oauth/anonymous_loader/releases/tag/v0.1.1
 [0.1.0]: https://github.com/ruby-oauth/anonymous_loader/compare/eb9b54b0b8a62d8982ed17605a22ed259ac48b24...v0.1.0
 [0.1.0t]: https://github.com/ruby-oauth/anonymous_loader/releases/tag/v0.1.0
