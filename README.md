@@ -21,6 +21,20 @@ I've summarized my thoughts in [this blog post](https://dev.to/galtzo/hostile-ta
 
 ## 🌻 Synopsis <a href="https://discord.gg/3qme4XHNKN"><img alt="Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px.svg" width="8%" align="right"/></a> <a href="https://ruby-toolbox.com"><img alt="ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5" src="https://logos.galtzo.com/assets/images/ruby-lang/avatar-128px.svg" width="8%" align="right"/></a>
 
+AnonymousLoader evaluates Ruby source files inside fresh anonymous modules.
+It is useful when a tool needs to inspect or reuse code that declares constants
+whose top-level names may collide with the host process.
+
+The loaded source keeps its normal constant nesting, but that nesting starts
+inside the returned anonymous namespace. For example, source that declares
+`Auth::Sanitizer` becomes `namespace::Auth::Sanitizer`, and does not create
+`Object::Auth`.
+
+AnonymousLoader can load explicitly named files, or resolve a file using
+RubyGems metadata with a `$LOAD_PATH` fallback. The fallback is intended for
+Bundler standalone and similar environments where code is loadable but a gem is
+not visible through `Gem.loaded_specs` or the normal RubyGems index.
+
 ## 💡 Info you can shake a stick at
 
 | Tokens to Remember | [![Gem name][⛳️name-img]][⛳️gem-name] [![Gem namespace][⛳️namespace-img]][⛳️gem-namespace] |
@@ -104,6 +118,23 @@ gem install anonymous_loader
 ```
 
 ## ⚙️ Configuration
+
+AnonymousLoader has no global configuration. Each call is configured with
+keyword arguments, so callers can choose the resolution strategy per load.
+
+Resolution order:
+
+1. `path:` loads an explicit file path.
+2. `gem_name:` plus `require_path:` resolves through RubyGems metadata when the
+   gem is loaded or installed.
+3. `require_path:` falls back to `$LOAD_PATH` via RubyGems file discovery.
+
+When using the `$LOAD_PATH` fallback with `version_requirement:`, pass
+`version_file:` so AnonymousLoader can validate the nearby library version
+before evaluating the target file. If a file is present but the discovered
+version is outside the requested range, `AnonymousLoader::VersionMismatchError`
+is raised. If no candidate can be resolved, `AnonymousLoader::FileNotFoundError`
+is raised.
 
 ## 🔧 Basic Usage
 

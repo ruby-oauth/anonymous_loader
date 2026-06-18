@@ -83,6 +83,20 @@ I've summarized my thoughts in [this blog post](https://dev.to/galtzo/hostile-ta
 <h2 id="-synopsis--">🌻 Synopsis <a href="https://discord.gg/3qme4XHNKN"><img alt="Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px.svg" width="8%" align="right"></a> <a href="https://ruby-toolbox.com"><img alt="ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5" src="https://logos.galtzo.com/assets/images/ruby-lang/avatar-128px.svg" width="8%" align="right"></a>
 </h2>
 
+<p>AnonymousLoader evaluates Ruby source files inside fresh anonymous modules.<br>
+It is useful when a tool needs to inspect or reuse code that declares constants<br>
+whose top-level names may collide with the host process.</p>
+
+<p>The loaded source keeps its normal constant nesting, but that nesting starts<br>
+inside the returned anonymous namespace. For example, source that declares<br>
+<code>Auth::Sanitizer</code> becomes <code>namespace::Auth::Sanitizer</code>, and does not create<br>
+<code>Object::Auth</code>.</p>
+
+<p>AnonymousLoader can load explicitly named files, or resolve a file using<br>
+RubyGems metadata with a <code>$LOAD_PATH</code> fallback. The fallback is intended for<br>
+Bundler standalone and similar environments where code is loadable but a gem is<br>
+not visible through <code>Gem.loaded_specs</code> or the normal RubyGems index.</p>
+
 <h2 id="-info-you-can-shake-a-stick-at">💡 Info you can shake a stick at</h2>
 
 <table>
@@ -299,6 +313,28 @@ not practical for the current toolchain.</p>
 </code></pre>
 
 <h2 id="️-configuration">⚙️ Configuration</h2>
+
+<p>AnonymousLoader has no global configuration. Each call is configured with<br>
+keyword arguments, so callers can choose the resolution strategy per load.</p>
+
+<p>Resolution order:</p>
+
+<ol>
+  <li>
+<code>path:</code> loads an explicit file path.</li>
+  <li>
+<code>gem_name:</code> plus <code>require_path:</code> resolves through RubyGems metadata when the<br>
+gem is loaded or installed.</li>
+  <li>
+<code>require_path:</code> falls back to <code>$LOAD_PATH</code> via RubyGems file discovery.</li>
+</ol>
+
+<p>When using the <code>$LOAD_PATH</code> fallback with <code>version_requirement:</code>, pass<br>
+<code>version_file:</code> so AnonymousLoader can validate the nearby library version<br>
+before evaluating the target file. If a file is present but the discovered<br>
+version is outside the requested range, <code>AnonymousLoader::VersionMismatchError</code><br>
+is raised. If no candidate can be resolved, <code>AnonymousLoader::FileNotFoundError</code><br>
+is raised.</p>
 
 <h2 id="-basic-usage">🔧 Basic Usage</h2>
 
@@ -525,7 +561,7 @@ Please consider sponsoring me or the project.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Jun 18 07:39:02 2026 by
+  Generated on Thu Jun 18 07:48:50 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>
