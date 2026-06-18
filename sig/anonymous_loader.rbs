@@ -1,4 +1,14 @@
 module AnonymousLoader
-  VERSION: String
-  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+  class Error < StandardError
+  end
+
+  class FileNotFoundError < Error
+  end
+
+  class VersionMismatchError < Error
+  end
+
+  def self.load: (files: String | Array[String], ?root: String?, **untyped) -> Module
+  def self.load_path: (?path: String?, ?gem_name: String?, ?require_path: String?, ?version_requirement: String | Gem::Requirement?, ?version_file: String?, **untyped) -> Module
+  def self.resolve_path: (?path: String?, ?gem_name: String?, ?require_path: String?, ?version_requirement: String | Gem::Requirement?, ?version_file: String?, **untyped) -> String
 end
