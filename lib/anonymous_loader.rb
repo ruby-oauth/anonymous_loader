@@ -18,7 +18,7 @@ module AnonymousLoader
   PathRequest = Struct.new(:path, :gem_name, :require_path, :requirement, :version_file)
   # Internal load-path version lookup request.
   # @api private
-  VersionRequest = Struct.new(:candidate, :version_file)
+  VersionRequest = Struct.new(:candidate, :require_path, :version_file)
 
   class << self
     # Evaluate one or more Ruby files inside a fresh anonymous module.
@@ -165,16 +165,16 @@ module AnonymousLoader
     end
 
     def resolve_versioned_load_path(candidates, request)
-      versions = load_path_versions(candidates, request.version_file)
+      versions = load_path_versions(candidates, request)
       match = versions.find { |pair| request.requirement.satisfied_by?(pair.last) }
       return match.first if match
 
       raise_load_path_version_mismatch(request, versions.map(&:last))
     end
 
-    def load_path_versions(candidates, version_file)
+    def load_path_versions(candidates, request)
       candidates.each_with_object([]) do |candidate, versions|
-        version = version_for_load_path_candidate(VersionRequest.new(candidate, version_file))
+        version = version_for_load_path_candidate(VersionRequest.new(candidate, request.require_path, request.version_file))
         versions << [candidate, version] if version
       end
     end
@@ -219,8 +219,8 @@ module AnonymousLoader
 
     def load_path_root(request)
       candidate_dir = File.dirname(request.candidate)
-      version_depth = request.version_file.split("/").length - 1
-      version_depth.times { candidate_dir = File.dirname(candidate_dir) }
+      require_depth = request.require_path.split("/").length - 1
+      require_depth.times { candidate_dir = File.dirname(candidate_dir) }
       candidate_dir
     end
   end

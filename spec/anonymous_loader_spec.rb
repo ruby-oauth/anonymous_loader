@@ -114,6 +114,29 @@ RSpec.describe AnonymousLoader do
     end
   end
 
+  it "validates a load path file when the require path and version file have different depths" do
+    Dir.mktmpdir do |dir|
+      lib = File.join(dir, "lib")
+      FileUtils.mkdir_p(File.join(lib, "auth", "sanitizer"))
+      FileUtils.mkdir_p(File.join(lib, "auth_sanitizer"))
+      File.write(File.join(lib, "auth", "sanitizer", "version.rb"), "module Auth; module Sanitizer; VERSION = \"0.2.2\"; end; end\n")
+      File.write(File.join(lib, "auth_sanitizer", "loader.rb"), "module AuthSanitizer; module Loader; VALUE = true; end; end\n")
+
+      $LOAD_PATH.unshift(lib)
+      begin
+        namespace = described_class.load_path(
+          require_path: "auth_sanitizer/loader.rb",
+          version_requirement: "~> 0.2",
+          version_file: "auth/sanitizer/version.rb"
+        )
+      ensure
+        $LOAD_PATH.delete(lib)
+      end
+
+      expect(namespace.const_get(:AuthSanitizer).const_get(:Loader).const_get(:VALUE)).to be(true)
+    end
+  end
+
   it "does not use a versioned load path file when the adjacent version file is missing" do
     Dir.mktmpdir do |dir|
       lib = File.join(dir, "lib")

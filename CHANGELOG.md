@@ -28,6 +28,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Fixed `$LOAD_PATH` version validation when the requested Ruby file and the
+  adjacent version file live at different directory depths.
+
 ### Security
 
 ## [0.1.0] - 2026-06-18
