@@ -20,11 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- Added support for JRuby 10.1 and TruffleRuby 34.0.
-
 ### Changed
-
-- Retemplated project metadata and CI/development automation with `kettle-jem` v7.0.0.
 
 ### Deprecated
 
@@ -33,6 +29,21 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [0.1.2] - 2026-06-22
+
+- TAG: [v0.1.2][0.1.2t]
+- COVERAGE: 96.33% -- 105/109 lines in 2 files
+- BRANCH COVERAGE: 81.58% -- 31/38 branches in 2 files
+- 88.89% documented
+
+### Added
+
+- Added support for JRuby 10.1 and TruffleRuby 34.0.
+
+### Changed
+
+- Retemplated project metadata and CI/development automation with `kettle-jem` v7.0.0.
 
 ## [0.1.1] - 2026-06-18
 
@@ -59,7 +70,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - Added the initial anonymous namespace loader API with explicit path,
   RubyGems metadata, and `$LOAD_PATH` resolution strategies.
 
-[Unreleased]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.1...v0.1.2
+[0.1.2t]: https://github.com/ruby-oauth/anonymous_loader/releases/tag/v0.1.2
 [0.1.1]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.0...v0.1.1
 [0.1.1t]: https://github.com/ruby-oauth/anonymous_loader/releases/tag/v0.1.1
 [0.1.0]: https://github.com/ruby-oauth/anonymous_loader/compare/eb9b54b0b8a62d8982ed17605a22ed259ac48b24...v0.1.0
