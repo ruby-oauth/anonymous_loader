@@ -28,8 +28,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Removed stale local-path `version_gem` state from the main lockfile.
-
 ### Security
 
 ## [0.1.3] - 2026-07-13
@@ -42,6 +40,8 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 - Package configured license files in gem release file lists.
+
+- Removed stale local-path `version_gem` state from the main lockfile.
 
 ## [0.1.2] - 2026-06-22
 
