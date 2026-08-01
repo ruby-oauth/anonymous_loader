@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [0.1.4] - 2026-08-01
+
+- TAG: [v0.1.4][0.1.4t]
+- COVERAGE: 96.33% -- 105/109 lines in 2 files
+- BRANCH COVERAGE: 81.58% -- 31/38 branches in 2 files
+- 100.00% documented
+
+### Added
+
 - kettle-jem-template-20260720-001 - READMEs can now display configured
   corporate sponsor logos.
 - kettle-jem-template-20260720-005 - README Support & Community links now
@@ -48,10 +67,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-001 - Generated Ruby workflows now use clearer
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
-
-### Deprecated
-
-### Removed
 
 ### Fixed
 
@@ -91,8 +106,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs
   relative to the gemspec directory, so release package contents stay correct
   even when the gemspec is loaded from another working directory.
-
-### Security
 
 ## [0.1.3] - 2026-07-14
 
@@ -147,7 +160,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - Added the initial anonymous namespace loader API with explicit path,
   RubyGems metadata, and `$LOAD_PATH` resolution strategies.
 
-[Unreleased]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.4...HEAD
+[0.1.4]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.3...v0.1.4
+[0.1.4t]: https://github.com/ruby-oauth/anonymous_loader/releases/tag/v0.1.4
 [0.1.3]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.2...v0.1.3
 [0.1.3t]: https://github.com/ruby-oauth/anonymous_loader/releases/tag/v0.1.3
 [0.1.2]: https://github.com/ruby-oauth/anonymous_loader/compare/v0.1.1...v0.1.2
