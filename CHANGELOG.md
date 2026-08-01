@@ -22,11 +22,20 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- kettle-jem-template-20260801-001 - Generated README gem dashboard links now
+  use ClickGems instead of BestGems.
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- kettle-jem-template-20260801-002 - Generated RSpec helpers now normalize
+  managed configuration block bindings structurally, preventing mixed block
+  parameter names from producing invalid configuration after a merge.
+
+- Gemspec homepage metadata now uses a valid hyphenated hostname on legacy RubyGems.
 
 ### Security
 
