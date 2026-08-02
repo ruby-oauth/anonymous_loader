@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "version_gem"
-
 require_relative "anonymous_loader/version"
 
 # Loads Ruby source under anonymous modules to avoid top-level namespace collisions.
