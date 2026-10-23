@@ -20,29 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- kettle-jem-template-20260913-001 - Templating now also surfaces a review
-  entry in `dependency_conflicts.resolve` when a direct development
-  dependency doesn't support one or more of this project's declared
-  `engines:` and has no template-managed modular home (e.g. `sqlite3` on
-  `jruby`). Review each entry and pick a resolution per the project's own
-  engine support needs.
-
 ### Changed
-
-- kettle-jem-template-20260801-001 - Generated README gem dashboard links now
-  use ClickGems instead of BestGems.
-
-- [kc] kettle-jem/prepare: updated 17 project files:
-  - configuration (1)
-  - dependencies (16)
-
-- [kc] kettle-jem/template: updated 50 project files:
-  - code and tests (3)
-  - configuration (1)
-  - dependencies (8)
-  - documentation (2)
-  - other (4)
-  - workflows (32)
 
 ### Deprecated
 
@@ -50,24 +28,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- kettle-jem-template-20260801-002 - Generated RSpec helpers now normalize
-  managed configuration block bindings structurally, preventing mixed block
-  parameter names from producing invalid configuration after a merge.
-
-- Gemspec homepage metadata now uses a valid hyphenated hostname on legacy RubyGems.
-
-- kettle-jem-template-20260801-003 - Generated project metadata and
-  documentation now normalize configured underscore hostnames to valid
-  hyphenated hostnames.
-- kettle-jem-template-20260801-004 - Generated organization README logos now
-  use GitHub's stable organization avatar endpoint instead of assuming a
-  matching Galtzo-hosted asset exists.
-- kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
-  preserving comments and trailing commas during template updates.
-
 ### Security
 
-## [0.1.4] - 2026-08-01
+## [0.1.4] - 2026-10-23
 
 - TAG: [v0.1.4][0.1.4t]
 - COVERAGE: 96.33% -- 105/109 lines in 2 files
@@ -83,6 +46,14 @@ Please file a bug if you notice a violation of semantic versioning.
   before generated docs are refreshed.
 - kettle-jem-template-20260727-001 - Spec harness documentation now lists the
   RSpec helpers provided by `kettle-test`.
+
+- kettle-jem-template-20260913-001 - Templating now also surfaces a review
+  entry in `dependency_conflicts.resolve` when a direct development
+  dependency doesn't support one or more of this project's declared
+  `engines:` and has no template-managed modular home (e.g. `sqlite3` on
+  `jruby`). Review each entry and pick a resolution per the project's own
+  engine support needs.
+
 ### Changed
 
 - kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer
@@ -96,6 +67,21 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-001 - Generated Ruby workflows now use clearer
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
+
+- kettle-jem-template-20260801-001 - Generated README gem dashboard links now
+  use ClickGems instead of BestGems.
+
+- [kc] kettle-jem/prepare: updated 17 project files:
+  - configuration (1)
+  - dependencies (16)
+
+- [kc] kettle-jem/template: updated 50 project files:
+  - code and tests (3)
+  - configuration (1)
+  - dependencies (8)
+  - documentation (2)
+  - other (4)
+  - workflows (32)
 
 ### Fixed
 
@@ -126,6 +112,21 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs
   relative to the gemspec directory, so release package contents stay correct
   even when the gemspec is loaded from another working directory.
+
+- kettle-jem-template-20260801-002 - Generated RSpec helpers now normalize
+  managed configuration block bindings structurally, preventing mixed block
+  parameter names from producing invalid configuration after a merge.
+
+- Gemspec homepage metadata now uses a valid hyphenated hostname on legacy RubyGems.
+
+- kettle-jem-template-20260801-003 - Generated project metadata and
+  documentation now normalize configured underscore hostnames to valid
+  hyphenated hostnames.
+- kettle-jem-template-20260801-004 - Generated organization README logos now
+  use GitHub's stable organization avatar endpoint instead of assuming a
+  matching Galtzo-hosted asset exists.
+- kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
+  preserving comments and trailing commas during template updates.
 
 ## [0.1.3] - 2026-07-14
 
