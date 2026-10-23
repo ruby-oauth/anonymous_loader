@@ -574,7 +574,7 @@ Thanks for RTFM. ☺️
 | Field | Value |
 |---|---|
 | Package | anonymous_loader |
-| Description | 💎 AnonymousLoader resolves Ruby files from paths, gem metadata, or $LOAD_PATH and evaluates them inside anonymous modules to avoid top-level namespace collisions. |
+| Description | 🎭 AnonymousLoader resolves Ruby files from paths, gem metadata, or $LOAD_PATH and evaluates them inside anonymous modules to avoid top-level namespace collisions. |
 | Homepage | https://github.com/ruby-oauth/anonymous_loader |
 | Source | https://github.com/ruby-oauth/anonymous_loader |
 | License | `MIT` |
