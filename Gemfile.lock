@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    anonymous_loader (0.1.4)
+    anonymous_loader (0.1.5)
       version_gem (~> 1.1, >= 1.1.16)
 
 PATH
@@ -107,7 +107,7 @@ PATH
 PATH
   remote: /var/home/pboling/src/my/ruby-oauth/version_gem
   specs:
-    version_gem (1.1.16)
+    version_gem (1.1.17)
 
 PATH
   remote: /var/home/pboling/src/my/structuredmerge/ruby/gems/ast-crispr-markdown-markly
@@ -897,7 +897,7 @@ DEPENDENCIES
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
-  anonymous_loader (0.1.4)
+  anonymous_loader (0.1.5)
   ansi (1.6.0) sha256=ac9ea0c0ea8d32fb4e271348e609963ac78882f34b73836c2a02b3622e666658
   appraisal2 (3.2.6) sha256=6664d2404b9fe160dfbbed4dd9b78e7b9146402bc3468ff92ba78c1878bc318a
   appraisal2-rubocop (1.0.5) sha256=91db38e8585dc2b07491eee6c288764511a6c6a0a5d06c339c91ab6a4164bea8
@@ -1083,7 +1083,7 @@ CHECKSUMS
   turbo_tests2 (4.0.0) sha256=a01c2e29eeca973946bcca8fed10366ffad34622b9fa85d4cb8ebf14f429aebd
   typescript-merge (7.1.16)
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
-  version_gem (1.1.16)
+  version_gem (1.1.17)
   webrick (1.9.2) sha256=beb4a15fc474defed24a3bda4ffd88a490d517c9e4e6118c3edce59e45864131
   yaml-converter (0.2.7) sha256=aa6cae4a9f41ab909c39e4185911c7c3b0a196ae33439ec721aa17631e6d1b3d
   yaml-merge (7.1.16)
