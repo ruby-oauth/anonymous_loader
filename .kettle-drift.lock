@@ -1,13 +1,4 @@
 {
-  "- code and tests (1)\n- dependencies (3)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        30,
-        62
-      ]
-    }
-  ],
   "- dependencies (3)\n- documentation (1)": [
     {
       "file": "CHANGELOG.md",
